@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Header from '../header';
 import RandomPlanet from '../random-planet';
 import PersonDetails from '../person-details';
-import ItemList from '../item-list';
+import PersonList from '../person-list';
 
 import './App.css';
 
@@ -12,7 +12,7 @@ class App extends Component {
             <div>
                 <Header />
                 <RandomPlanet />
-                <ItemList />
+                <PersonList />
                 <PersonDetails />
             </div>
         );
