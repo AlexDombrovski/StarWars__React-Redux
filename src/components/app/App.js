@@ -7,12 +7,15 @@ import PersonList from '../person-list';
 import './App.css';
 
 class App extends Component {
+    call = (name) => {
+        console.log(name);
+    }
     render() {
         return (
             <div>
                 <Header />
                 <RandomPlanet />
-                <PersonList />
+                <PersonList call={this.call} />
                 <PersonDetails />
             </div>
         );

@@ -9,40 +9,38 @@ export default class PersonList extends React.Component {
   swapiService = new SwapiService();
 
   state = {
-    number: null,
-    name: null
+    allPeople: []
   };
 
   componentDidMount() {
-    this.updatePeople();
+    this.setStatePeople();
   }
 
-  async updatePeople() {
-    const number = Math.floor(Math.random() * 125) + 2;
-    const people = await this.swapiService.getAllPeople(number);
-
-    this.setState({
-      number,
-      name: people.name
-    });
+  async setStatePeople() {
+    const peoples = await this.swapiService.getAllPeople();
+    this.setState({ allPeople: peoples });
+    console.log(peoples);
   }
+
+
 
   render() {
 
-    const {name} = this.state;
+    const { allPeople } = this.state;
+    const { call } = this.props;
 
-    return ( 
-        <ul className="item-list list-group">
-          <li className="list-group-item">
-            {name}
-          </li>
-          <li className="list-group-item">
-            {name}
-          </li>
-          <li className="list-group-item">
-            {name}
-          </li>
-        </ul>
+    const allNames = allPeople.map((item) => {
+      return (
+        <li className="list-group-item" key={item.name} onClick={() => call(item.name)}>
+          {item.name}
+        </li>
+      );
+    });
+
+    return (
+      <ul className="item-list list-group">
+        {allNames}
+      </ul>
     );
   }
 }
