@@ -19,11 +19,13 @@ class App extends Component {
         const { personData } = this.state;
 
         return (
-            <div>
+            <div className="container">
                 <Header />
                 <RandomPlanet />
-                <PersonList call={this.call} />
-                {personData.name && <PersonDetails personData={personData} />}
+                <div className="container persons">
+                    <PersonList call={this.call} />
+                    {personData.name && <PersonDetails personData={personData} />}
+                </div>
             </div>
         );
     }

@@ -1,9 +1,11 @@
 .list-group {
-  margin: 35px auto;
+  flex-grow: 1;
+  margin-top: 20px;
 }
 
 .item-list .list-group-item {
   cursor: pointer;
+  border-radius: 0;
 }
 
 .item-list .list-group-item:hover {

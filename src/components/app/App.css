@@ -2,3 +2,9 @@ h1 {
   color: #27aedb;
   text-align: center;
 }
+
+.persons {
+  display: flex;
+  width: 100%;
+  padding: 0;
+}
