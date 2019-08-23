@@ -7,16 +7,23 @@ import PersonList from '../person-list';
 import './App.css';
 
 class App extends Component {
-    call = (name) => {
-        console.log(name);
+
+    state = {
+        personData: {}
+    }
+
+    call = (data) => {
+        this.setState({ personData: data });
     }
     render() {
+        const { personData } = this.state;
+
         return (
             <div>
                 <Header />
                 <RandomPlanet />
                 <PersonList call={this.call} />
-                <PersonDetails />
+                {personData.name && <PersonDetails personData={personData} />}
             </div>
         );
     }

@@ -30,9 +30,10 @@ export default class PersonList extends React.Component {
     const { call } = this.props;
 
     const allNames = allPeople.map((item) => {
+      const { name, gender, birth_year, eye_color } = item;
       return (
-        <li className="list-group-item" key={item.name} onClick={() => call(item.name)}>
-          {item.name}
+        <li className="list-group-item" key={name} onClick={() => call({ name, gender, birthYear: birth_year, eyeColor: eye_color })}>
+          {name}
         </li>
       );
     });
