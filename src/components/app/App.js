@@ -3,6 +3,7 @@ import Header from '../header';
 import RandomPlanet from '../random-planet';
 import PersonDetails from '../person-details';
 import PersonList from '../person-list';
+import PagePlanets from '../page-planets';
 
 import './App.css';
 
