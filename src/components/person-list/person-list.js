@@ -19,7 +19,6 @@ export default class PersonList extends React.Component {
   async setStatePeople() {
     const peoples = await this.swapiService.getAllPeople();
     this.setState({ allPeople: peoples });
-    console.log(peoples);
   }
 
 

@@ -1,33 +1,21 @@
 import React, { Component } from "react";
-import Header from '../header';
-import RandomPlanet from '../random-planet';
-import PersonDetails from '../person-details';
-import PersonList from '../person-list';
+import HomePage from '../home';
+import { BrowserRouter, Route, Redirect } from 'react-router-dom';
 import PagePlanets from '../page-planets';
+
 
 import './App.css';
 
 class App extends Component {
 
-    state = {
-        personData: {}
-    }
-
-    call = (data) => {
-        this.setState({ personData: data });
-    }
     render() {
-        const { personData } = this.state;
 
         return (
-            <div className="container">
-                <Header />
-                <RandomPlanet />
-                <div className="container persons">
-                    <PersonList call={this.call} />
-                    {personData.name && <PersonDetails personData={personData} />}
-                </div>
-            </div>
+            <BrowserRouter>
+                <Redirect to="/home" />
+                <Route path="/home" component={HomePage} />
+                <Route path="/planets" component={PagePlanets} />
+            </BrowserRouter>
         );
     }
 }

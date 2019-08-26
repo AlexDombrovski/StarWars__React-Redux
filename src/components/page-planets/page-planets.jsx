@@ -1,23 +1,42 @@
 import React from 'react';
+import SwapiService from '../../services/swapi-service';
 
 import './page-planets.css'
 
 
 export default class PagePlanets extends React.Component {
 
+  state = {
+    allPlanets: []
+  }
+
+  swapiService = new SwapiService();
+
+  getAllPlanets = async () => {
+    const res = await this.swapiService.getAllPlanets();
+    this.setState({allPlanets: res});
+    console.log(res);
+  }
+
+  componentDidMount() {
+    this.getAllPlanets();
+  }
+
   render() {
+    const { allPlanets } = this.state;
+
+    const viewAllPlanets = allPlanets.map(item => {
+      return (
+        <li className="list-group-item" key={item.name}>
+          {item.name}
+        </li>
+      );
+    });
+
     return(
       <div className="container list-group">
         <ul className="item-list list-group">
-          <li className="list-group-item">
-            Polis Massa
-          </li>
-          <li className="list-group-item">
-            Saleucami
-          </li>
-          <li className="list-group-item">
-            Mygeeto
-          </li>
+          {viewAllPlanets}
         </ul>
       </div>
     );
