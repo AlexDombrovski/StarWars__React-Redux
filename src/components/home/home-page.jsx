@@ -1,5 +1,4 @@
 import React from 'react';
-import Header from '../header';
 import RandomPlanet from '../random-planet';
 import PersonDetails from '../person-details';
 import PersonList from '../person-list';
@@ -20,7 +19,6 @@ export default class HomePage extends React.Component {
     
     return(
       <div className="container">
-        <Header />
         <RandomPlanet />
         <div className="container persons">
           <PersonList call={this.call} />
