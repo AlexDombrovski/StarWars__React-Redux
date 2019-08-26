@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import HomePage from '../home';
 import { BrowserRouter, Route, Redirect } from 'react-router-dom';
 import PagePlanets from '../page-planets';
+//import PlanetDetails from '../planet-details';
 
 
 import './App.css';

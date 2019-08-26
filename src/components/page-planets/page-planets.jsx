@@ -7,7 +7,8 @@ import './page-planets.css'
 export default class PagePlanets extends React.Component {
 
   state = {
-    allPlanets: []
+    allPlanets: [],
+    planetsData: {}
   }
 
   swapiService = new SwapiService();
@@ -22,12 +23,16 @@ export default class PagePlanets extends React.Component {
     this.getAllPlanets();
   }
 
+  call = (data) => {
+    this.setState({ planetsData: data });
+  }
+
   render() {
     const { allPlanets } = this.state;
 
     const viewAllPlanets = allPlanets.map(item => {
       return (
-        <li className="list-group-item" key={item.name}>
+        <li className="list-group-item" key={item.name} onClick={() => this.call({ })}>
           {item.name}
         </li>
       );

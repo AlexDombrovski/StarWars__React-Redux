@@ -1,0 +1,22 @@
+.planets-details {
+  display: flex;
+  margin-top: 1rem;
+  margin-left: 1rem;
+  flex-direction: row;
+  padding: 1rem;
+  background-color: #303030;
+}
+
+.planets-details .person-image {
+  width: 400px;
+  height: 400px;
+  border-radius: 10px;
+}
+
+.planets-details .list-group-item {
+  padding: .65rem;
+}
+
+.planets-details .list-group-item .term{
+  margin-right: .5rem;
+}
