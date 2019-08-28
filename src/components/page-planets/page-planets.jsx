@@ -24,6 +24,7 @@ export default class PagePlanets extends React.Component {
   }
 
   call = (data) => {
+    debugger;
     this.setState({ planetsData: data });
   }
 
@@ -32,7 +33,7 @@ export default class PagePlanets extends React.Component {
 
     const viewAllPlanets = allPlanets.map(item => {
       return (
-        <li className="list-group-item" key={item.name} onClick={() => this.call({ })}>
+        <li className="list-group-item" key={item.name} onClick={() => this.call({name: item.name })}>
           {item.name}
         </li>
       );
@@ -43,6 +44,7 @@ export default class PagePlanets extends React.Component {
         <ul className="item-list list-group">
           {viewAllPlanets}
         </ul>
+        
       </div>
     );
   }
