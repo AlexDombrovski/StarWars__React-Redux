@@ -24,7 +24,6 @@ export default class PagePlanets extends React.Component {
   }
 
   call = (data) => {
-    debugger;
     this.setState({ planetsData: data });
   }
 

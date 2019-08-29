@@ -27,5 +27,13 @@ export default class SwapiService {
 
     return body.results;
   }
+
+  async getAllStarships() {
+    const urlAdressStarships = `${this._apiBase}/starships/`;
+    const res = await fetch(urlAdressStarships);
+    const body = await res.json();
+    
+    return body.results;
+  }
 }
 
