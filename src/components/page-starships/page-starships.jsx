@@ -43,7 +43,7 @@ export default class PageStarships extends React.Component {
       <div className="container page-starship">
         <h4 className="starships-title">Starships</h4>
         <div className="page-starship__desc">
-          <ul className="item-list list-group">
+          <ul className="item-list list-group starship-list">
             {allModels}
           </ul>
           {shipCard.name && <StarshipDetails shipCard={ shipCard } />}

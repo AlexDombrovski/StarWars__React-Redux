@@ -49,7 +49,7 @@ export default class PagePlanets extends React.Component {
           All Planets
         </h4>
         <div className="planets-desc">
-          <ul className="item-list list-group">
+          <ul className="item-list list-group planets-list">
             {viewAllPlanets}
           </ul>
           {planetData.planetName && <PlanetDetails planetData={planetData} />}

@@ -5,3 +5,7 @@
 .planets-desc {
   display: flex;
 }
+
+.planets-list {
+  width: 100%;
+}

@@ -1,6 +1,7 @@
 import React from 'react';
 
 import SwapiService from '../../services/swapi-service.js';
+import PersonDetails from '../person-details';
 
 import './page-people.css';
 
@@ -42,9 +43,12 @@ export default class PagePeople extends React.Component {
     return (
       <div className="container page-people">
         <h4 className="people-title">All persons</h4>
-        <ul className="item-list list-group">
-          {allNames}
-        </ul>
+        <div className="page-people__desc">
+          <ul className="item-list list-group page-people__list">
+            {allNames}
+          </ul>
+          {personData.name && <PersonDetails personData={ personData }/>}
+        </div>
       </div>
     );
   }
