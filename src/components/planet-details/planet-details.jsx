@@ -7,6 +7,8 @@ export default class PlanetDetails extends React.Component {
 
   render() {
 
+    const { planetName, population, rotationPeriod, diameter, climate, terrain } = this.props.planetData;
+
     return (
       <div className="planets-details">
         <img src="https://starwars-visualguide.com/assets/img/planets/2.jpg" className="person-image" alt=""></img>

@@ -1,5 +1,7 @@
 import React from 'react';
+
 import SwapiService from '../../services/swapi-service';
+import PlanetDetails from '../planet-details';
 
 import './page-planets.css'
 
@@ -8,7 +10,7 @@ export default class PagePlanets extends React.Component {
 
   state = {
     allPlanets: [],
-    planetsData: {}
+    planetData: {}
   }
 
   swapiService = new SwapiService();
@@ -23,17 +25,19 @@ export default class PagePlanets extends React.Component {
     this.getAllPlanets();
   }
 
-  call = (data) => {
-    this.setState({ planetsData: data });
+  showPlanetCard = (data) => {
+    this.setState({ planetData: data });
   }
 
   render() {
-    const { allPlanets } = this.state;
+    const { allPlanets, planetData } = this.state;
 
     const viewAllPlanets = allPlanets.map(item => {
+      const { name: planetName, population, rotation_period: rotationPeriod, diameter, climate, terrain } = item;
       return (
-        <li className="list-group-item" key={item.name} onClick={() => this.call({name: item.name })}>
-          {item.name}
+        <li className="list-group-item" key={planetName} onClick={() => this.showPlanetCard({ planetName, population,
+          rotationPeriod, diameter, climate, terrain })}>
+          {planetName}
         </li>
       );
     });
@@ -43,7 +47,7 @@ export default class PagePlanets extends React.Component {
         <ul className="item-list list-group">
           {viewAllPlanets}
         </ul>
-        
+        <PlanetDetails planetData={ planetData }/>
       </div>
     );
   }
