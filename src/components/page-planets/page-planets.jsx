@@ -17,8 +17,7 @@ export default class PagePlanets extends React.Component {
 
   getAllPlanets = async () => {
     const res = await this.swapiService.getAllPlanets();
-    this.setState({allPlanets: res});
-    console.log(res);
+    this.setState({ allPlanets: res });
   }
 
   componentDidMount() {
@@ -33,21 +32,28 @@ export default class PagePlanets extends React.Component {
     const { allPlanets, planetData } = this.state;
 
     const viewAllPlanets = allPlanets.map(item => {
-      const { name: planetName, population, rotation_period: rotationPeriod, diameter, climate, terrain } = item;
+      const { name: planetName, population, rotation_period: rotationPeriod, diameter, climate } = item;
       return (
-        <li className="list-group-item" key={planetName} onClick={() => this.showPlanetCard({ planetName, population,
-          rotationPeriod, diameter, climate, terrain })}>
+        <li className="list-group-item" key={planetName} onClick={() => this.showPlanetCard({
+          planetName, population,
+          rotationPeriod, diameter, climate
+        })}>
           {planetName}
         </li>
       );
     });
 
-    return(
+    return (
       <div className="container list-group">
-        <ul className="item-list list-group">
-          {viewAllPlanets}
-        </ul>
-        <PlanetDetails planetData={ planetData }/>
+        <h4 className="planets-title">
+          All Planets
+        </h4>
+        <div className="planets-desc">
+          <ul className="item-list list-group">
+            {viewAllPlanets}
+          </ul>
+          {planetData.planetName && <PlanetDetails planetData={planetData} />}
+        </div>
       </div>
     );
   }
