@@ -64,17 +64,17 @@ export default class RandomPlanet extends Component {
 
     return (
       <div className="random-planet">
-        {id && <img className="planet-image" 
+        {id && <img className="planet-image"
           src={`https://starwars-visualguide.com/assets/img/planets/${id}.jpg`} alt="" />}
         <div className="random-card">
           <h4 className="random-planet__title">{name}</h4>
           <ul className="list-group">
             {listItems}
           </ul>
+          <Link to="/planets">
+            <button type="button" className="more-planets">More planets</button>
+          </Link>
         </div>
-        <Link to="/planets">
-          <button type="button" className="more-planets">More planets</button>
-        </Link>
       </div>
     );
   }

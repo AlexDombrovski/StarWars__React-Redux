@@ -1,0 +1,45 @@
+.person-details__home {
+  display: flex;
+  flex-direction: row-reverse;
+  margin-top: 60px;
+  padding: 1rem;
+  background-color: #303030; 
+}
+
+.person-image__home {
+  width: 300px;
+  border-radius: 0.25rem;
+}
+
+.card-body__home {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  margin-right: 20px;
+}
+
+.person-title__home {
+  margin-bottom: 20px;
+}
+
+.list-group {
+  width: 100%;
+  margin-top: 20px;
+  
+}
+
+.item-list .list-group-item {
+  cursor: pointer; 
+}
+
+.item-list .list-group-item:hover {
+  background-color: #444;
+}
+
+.more-persons {
+  width: 160px;
+  height: 40px;
+  background-color: rgb(248, 172, 6);
+  border-radius: 10px;
+  margin-top: 30px;
+}

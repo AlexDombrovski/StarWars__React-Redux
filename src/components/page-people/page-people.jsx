@@ -17,6 +17,7 @@ export default class PagePeople extends React.Component {
   async setStatePeople() {
     const peoples = await this.swapiService.getAllPeople();
     this.setState({ allPeople: peoples });
+    console.log(this.state.allPeople);
   }
 
   componentDidMount() {

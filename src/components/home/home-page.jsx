@@ -1,7 +1,7 @@
 import React from 'react';
 
 import RandomPlanet from '../random-planet';
-import PersonList from '../person-list';
+import PersonCard from '../person-card';
 
 
 export default class HomePage extends React.Component {
@@ -11,11 +11,7 @@ export default class HomePage extends React.Component {
     return(
       <div className="container">
         <RandomPlanet />
-        <PersonList />
-        {/* <div className="container persons">
-          <PersonList call={this.call} />
-          {personData.name && <PersonDetails personData={personData} />}
-        </div>                    */}
+        <PersonCard />
       </div>
     );
   }
