@@ -9,7 +9,8 @@ export default class PersonList extends React.Component {
   swapiService = new SwapiService();
 
   state = {
-    allPeople: []
+    allPeople: [],
+    personData: {}
   };
 
   componentDidMount() {
@@ -19,6 +20,7 @@ export default class PersonList extends React.Component {
   async setStatePeople() {
     const peoples = await this.swapiService.getAllPeople();
     this.setState({ allPeople: peoples });
+    console.log(peoples);
   }
 
 
@@ -26,20 +28,19 @@ export default class PersonList extends React.Component {
   render() {
 
     const { allPeople } = this.state;
-    const { call } = this.props;
 
-    const allNames = allPeople.map((item) => {
-      const { name, gender, birth_year, eye_color } = item;
-      return (
-        <li className="list-group-item" key={name} onClick={() => call({ name, gender, birthYear: birth_year, eyeColor: eye_color })}>
-          {name}
-        </li>
+    const persons = allPeople.map((item) => {
+      const { name, gender, birth_year: birthYear, eye_color: eyeColor } = item;
+      return (       
+          <li className="list-group-item" key={name}>
+            { name }
+          </li>         
       );
     });
 
     return (
       <ul className="item-list list-group">
-        {allNames}
+        { persons }
       </ul>
     );
   }

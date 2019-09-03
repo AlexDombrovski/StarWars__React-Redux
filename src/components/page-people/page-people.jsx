@@ -23,9 +23,6 @@ export default class PagePeople extends React.Component {
     this.setStatePeople();
   }
 
-  showPersonsCard = (data) => {
-    this.setState({ personData: data });
-  }
 
   render() {
 

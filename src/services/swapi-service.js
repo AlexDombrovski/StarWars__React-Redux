@@ -20,6 +20,13 @@ export default class SwapiService {
     return body.results;  // возвращаем нужное и отформатированное;
   }
 
+  async getOnePerson(id) {
+    const res = await fetch(`${this._apiBase}/people/${id}`);
+    const body = await res.json();
+
+    return body;
+  }
+
   async getAllPlanets() {
     const urlAdressPlanets = `${this._apiBase}/planets/`;
     const res = await fetch(urlAdressPlanets);
