@@ -42,5 +42,12 @@ export default class SwapiService {
     
     return body.results;
   }
+
+  async getOneStarship(id) {
+    const res = await fetch(`${this._apiBase}/starships/${id}`);
+    const body = await res.json();
+
+    return body;
+  }
 }
 

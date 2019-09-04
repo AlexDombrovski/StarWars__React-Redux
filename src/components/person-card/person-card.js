@@ -24,7 +24,7 @@ export default class PersonCard extends React.Component {
   async getPerson() {
     const id = Math.floor(Math.random() * 25) + 2;
     const person = await this.swapiService.getOnePerson(id);
-    console.log(person);
+    
     this.setState({
       id,
       name: person.name,

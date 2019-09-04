@@ -1,13 +1,15 @@
-.person-details__home {
+.starship-details__home {
   display: flex;
-  flex-direction: row-reverse;
-  margin-top: 60px;
+  flex-direction: row;
+  margin: 60px 0;
   padding: 1rem;
   background-color: #303030; 
 }
 
-.person-image__home {
-  width: 300px;
+.starship-image__home {
+  width: 450px;
+  height: 375px;
+  margin-right: 10px;
   border-radius: 0.25rem;
 }
 
@@ -18,8 +20,9 @@
   margin-right: 20px;
 }
 
-.person-title__home {
+.starship-title__home {
   margin-bottom: 20px;
+  margin-left: 20px;
 }
 
 .list-group {
@@ -36,10 +39,10 @@
   background-color: #444;
 }
 
-.more-persons {
+.more-starships {
   width: 160px;
   height: 40px;
   background-color: rgb(248, 172, 6);
   border-radius: 10px;
-  margin-top: 100px;
+  margin-top: 50px;
 }
