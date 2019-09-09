@@ -1,10 +1,9 @@
 import React, { Component } from "react";
+import { BrowserRouter, Route, Redirect } from 'react-router-dom';
+
 import Header from '../header';
 import HomePage from '../home';
-import { BrowserRouter, Route } from 'react-router-dom';
 import PagePlanets from '../page-planets';
-//import PlanetDetails from '../planet-details';
-
 import PageStarships from '../page-starships';
 import PagePeople from '../page-people';
 import Tasks from '../tasks';
@@ -24,7 +23,7 @@ class App extends Component {
                 <Route path="/planets" component={PagePlanets} />
                 <Route path="/starships" component={PageStarships} />
                 <Route path="/tasks" component={Tasks} />
-                {/* <Redirect to="/home" from="/" /> */}
+                <Redirect to="/home" from="/" />
             </BrowserRouter>
         );
     }
