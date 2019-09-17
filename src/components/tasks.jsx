@@ -23,12 +23,11 @@ export default class Tasks extends React.Component {
 
 
 
-  UNSAFE_componentWillMount() {
-    console.log('componentWillMount');
-  }
+  // UNSAFE_componentWillMount() {
+  //   console.log('componentWillMount');
+  // }
 
   render() {
-    console.log('render');
     const { mass } = this.state;
 
     const viewArr = mass.map((value, index) => {
@@ -50,23 +49,25 @@ export default class Tasks extends React.Component {
     );
   }
 
-  componentDidMount() {
-    console.log('componentDidMount');
-  }
+  // componentDidMount() {
+  //   console.log('componentDidMount');
+  // }
 
-  UNSAFE_componentWillReceiveProps() {
-    console.log('componentWillReceiveProps');
-  }
+  // UNSAFE_componentWillReceiveProps() {
+  //   console.log('componentWillReceiveProps');
+  // }
 
-  componentDidUpdate() {
-    console.log('componentDidUpdate');
-  }
+  // componentDidUpdate() {
+  //   console.log('componentDidUpdate');
+  // }
 
-  UNSAFE_componentWillUpdate() {
-    console.log('componentWillUpdate');
-  }
+  // UNSAFE_componentWillUpdate() {
+  //   console.log('componentWillUpdate');
+  // }
 
-  componentWillUnmount() {
-    console.log('componentWillUnmount');
-  }
+  // componentWillUnmount() {
+  //   console.log('componentWillUnmount');
+  // }
+
+  
 }

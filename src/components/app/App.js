@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { BrowserRouter, Route, Redirect } from 'react-router-dom';
+import { Provider } from 'react-redux';
 
 import Header from '../header';
 import HomePage from '../home';
