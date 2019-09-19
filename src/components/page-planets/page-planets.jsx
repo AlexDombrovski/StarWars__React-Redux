@@ -1,36 +1,20 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 
-import SwapiService from '../../services/swapi-service';
 import PlanetDetails from '../planet-details';
 
 import './page-planets.css'
 
 
-export default class PagePlanets extends React.Component {
-
-  state = {
-    allPlanets: [],
-    planetData: {}
-  }
-
-  swapiService = new SwapiService();
-
-  getAllPlanets = async () => {
-    const res = await this.swapiService.getAllPlanets();
-    this.setState({ allPlanets: res });
-  }
-
-  componentDidMount() {
-    this.getAllPlanets();
-  }
+class PagePlanets extends React.Component {
 
   showPlanetCard = (data) => {
     this.setState({ planetData: data });
   }
 
   render() {
-    const { allPlanets, planetData } = this.state;
+    const { allPlanets, planetData } = this.props;
 
     const viewAllPlanets = allPlanets.map(item => {
       const { name: planetName, population, rotation_period: rotationPeriod, diameter, climate } = item;
@@ -59,3 +43,17 @@ export default class PagePlanets extends React.Component {
     );
   }
 }
+
+const mapStateToProps = (state) => {
+  return {
+    planetData: state.planetData
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(PagePlanets);
